@@ -119,6 +119,15 @@ function showSavedExpenses() {
 
       localStorage.setItem("mal-expenses", JSON.stringify(expenses));
 
+      const total = expenses.reduce(function (sum, expense) {
+        return sum + expense.amount;
+      }, 0);
+
+      totalSpent.textContent = `£${total.toFixed(2)}`;
+
+      const remaining = budget - total;
+      budgetRemaining.textContent = `£${remaining.toFixed(2)}`;
+
       showSavedExpenses();
     });
   });
