@@ -47,33 +47,6 @@ expenseForm.addEventListener("submit", function (event) {
   budgetRemaining.textContent = `£${remaining.toFixed(2)}`;
 
   showSavedExpenses();
-  expenseForm();
-
-  deleteButton.addEventListener("click", function () {
-    const expenseIndex = expenses.findIndex(function (item) {
-      return item.id === expense.id;
-    });
-
-    expenses.splice(expenseIndex, 1);
-    localStorage.setItem("mal-expenses", JSON.stringify(expenses));
-
-    const updatedTotal = expenses.reduce(function (sum, expense) {
-      return sum + expense.amount;
-    }, 0);
-
-    totalSpent.textContent = `£${updatedTotal.toFixed(2)}`;
-
-    const updatedRemaining = budget - updatedTotal;
-    budgetRemaining.textContent = `£${updatedRemaining.toFixed(2)}`;
-
-    expenseItem.remove();
-
-    if (expenses.length === 0) {
-      const emptyMessage = document.createElement("p");
-      emptyMessage.textContent = "No expense yet";
-      expenseList.appendChild(emptyMessage);
-    }
-  });
 
   expenseForm.reset();
 });
@@ -99,15 +72,22 @@ function showSavedExpenses() {
     const expenseItem = document.createElement("div");
     expenseItem.classList.add("expense-item");
 
-    const expenseText = document.createElement("span");
-    expenseText.textContent = `${expense.name} - £${expense.amount.toFixed(2)}`;
+    const expenseName = document.createElement("span");
+    expenseName.classList.add("expense-name");
+    expenseName.textContent = expense.name;
+
+    const expenseAmount = document.createElement("span");
+    expenseAmount.classList.add("expense-amount");
+    expenseAmount.textContent = `£${expense.amount.toFixed(2)}`;
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.type = "button";
 
-    expenseItem.appendChild(expenseText);
+    expenseItem.appendChild(expenseName);
+    expenseItem.appendChild(expenseAmount);
     expenseItem.appendChild(deleteButton);
+
     expenseList.appendChild(expenseItem);
 
     deleteButton.addEventListener("click", function () {
