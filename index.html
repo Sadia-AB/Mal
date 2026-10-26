@@ -38,10 +38,27 @@
                 <label for="amount">Amount</label>
                 <input type="number" id="amount" placeholder="£0.00">
 
+
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
                 <button type="submit">Add expense</button>
             </form>
         </section>
         <section>
+            <section>
+                <h2>Spending Breakdown</h2>
+                <div id="spending-breakdown">
+                    <p> Spending breakdown here</p>
+                </div>
+            </section>
+
             <h2>Recent expenses</h2>
             <div id="expense-list">
                 <p>No expense yet</p>
