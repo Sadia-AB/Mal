@@ -1,9 +1,9 @@
 body {
   font-family: "segoe UI", sans-serif;
-  background-color: #e1e9de;
+  background-color: #e7ede4;
   color: #2f3d32;
   margin: 0;
-  padding: 40px;
+  padding: 48px 32px;
 }
 
 header {
@@ -39,25 +39,6 @@ h2 {
   font-weight: 600;
   color: #3d5948;
 }
-input {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  margin-top: 8px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  background-color: #222;
-  color: white;
-  cursor: pointer;
-}
-
 label {
   display: block;
   margin-bottom: 8px;
@@ -68,21 +49,29 @@ input {
   display: block;
   width: 100%;
   box-sizing: border-box;
-  padding: 12px;
+  padding: 13px 14px;
+  margin-top: 8px;
   margin-bottom: 20px;
   border: 1px solid #d5ded2;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 16px;
+  font-family: inherit;
+  background-color: #fff;
+  color: #2f3d32;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 button {
-  padding: 14px 24px;
+  padding: 13px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: #3d5948;
-  color: white;
-  font-size: 16px;
+  color: #fff;
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 400;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 .expense-item {
   display: flex;
@@ -114,26 +103,35 @@ button {
 }
 .summary-card {
   flex: 1;
-  padding: 22px;
-  background-color: #e8eee5;
-  border-radius: 10px;
-  border: 1px solid #d5ded2;
+  padding: 24px;
+  background-color: #f1f5ef;
+  border-radius: 14px;
+  border: 1px solid #dfe7dc;
 }
 .summary-card p {
   margin-top: 0;
-  color: #666;
+  margin-bottom: 12px;
+  color: #68776a;
   font-size: 14px;
 }
 .summary-card h3 {
   margin-bottom: 0;
+  margin-top: 0;
   font-size: 28px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
 }
 button:hover {
   background-color: #526f5c;
 }
+button:active {
+  transform: scale (0.98);
+}
+
 input:focus {
-  outline: 2px solid #9ebaa4;
-  border-color: 9ebaa4;
+  outline: none;
+  border-color: #7d9b82;
+  box-shadow: 0 0 0 3px rgba(125, 155, 130, 0.18);
 }
 @media (max-width: 600px) {
   body {
@@ -165,19 +163,23 @@ select {
   display: block;
   width: 100%;
   box-sizing: border-box;
+  height: 30px;
   margin-top: 8px;
   margin-bottom: 20px;
-  padding: 12px;
+  padding: 0 16px;
   border: 1px solid #d5ded2;
-  border-radius: 6px;
-  background-color: #ffffff;
+  border-radius: 10px;
+  background-color: #fff;
   color: #2f3d32;
   font-size: 16px;
+  font-family: inherit;
   cursor: pointer;
 }
+
 select:focus {
-  outline: 2px solid #9ebaa4;
-  border-color: #9ebaa4;
+  outline: none;
+  border-color: #7d9b82;
+  box-shadow: 0 0 0 3px rgba(125, 155, 130, 0.18);
 }
 .expense-category {
   padding: 5px 10px;
